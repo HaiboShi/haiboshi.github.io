@@ -84,16 +84,22 @@
 
 
 
-<meta name="description" content="BHSFer From PKU">
-<meta property="og:type" content="website">
-<meta property="og:title" content="tags">
-<meta property="og:url" content="http://yoursite.com/tags/index.html">
+<meta name="description" content="新装过的mac系统由于terminal的语言编码格式为Ascii，很多时候使用ssh或者mosh server的时候不能登录成功。
+这里需要用locale命令查看终端下语言的形式，然后export相关的编码格式到LANG等变量。
+I noticed the exact same issue when logging onto servers running Red Hat from an OSX">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Mac系统下语言问题">
+<meta property="og:url" content="http://yoursite.com/2016/06/08/关于Mac系统下语言问题/index.html">
 <meta property="og:site_name" content="Haibo Shi - Known">
-<meta property="og:description" content="BHSFer From PKU">
-<meta property="og:updated_time" content="2016-06-07T09:27:39.000Z">
+<meta property="og:description" content="新装过的mac系统由于terminal的语言编码格式为Ascii，很多时候使用ssh或者mosh server的时候不能登录成功。
+这里需要用locale命令查看终端下语言的形式，然后export相关的编码格式到LANG等变量。
+I noticed the exact same issue when logging onto servers running Red Hat from an OSX">
+<meta property="og:updated_time" content="2016-06-08T02:18:56.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="tags">
-<meta name="twitter:description" content="BHSFer From PKU">
+<meta name="twitter:title" content="关于Mac系统下语言问题">
+<meta name="twitter:description" content="新装过的mac系统由于terminal的语言编码格式为Ascii，很多时候使用ssh或者mosh server的时候不能登录成功。
+这里需要用locale命令查看终端下语言的形式，然后export相关的编码格式到LANG等变量。
+I noticed the exact same issue when logging onto servers running Red Hat from an OSX">
 
 
 
@@ -114,15 +120,9 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/"/>
+  <link rel="canonical" href="http://yoursite.com/2016/06/08/关于Mac系统下语言问题/"/>
 
-  <title>
-  
-
-  
-    tags | Haibo Shi - Known
-  
-</title>
+  <title> 关于Mac系统下语言问题 | Haibo Shi - Known </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -143,7 +143,7 @@
     
   
 
-  <div class="container one-collumn sidebar-position-left  ">
+  <div class="container one-collumn sidebar-position-left page-post-detail ">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -243,9 +243,127 @@
 
   <div id="posts" class="posts-expand">
     
+
+  
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
+
     
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+            
+            
+              
+                关于Mac系统下语言问题
+              
+            
+          </h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            <span class="post-meta-item-icon">
+              <i class="fa fa-calendar-o"></i>
+            </span>
+            <span class="post-meta-item-text">发表于</span>
+            <time itemprop="dateCreated" datetime="2016-06-08T10:17:01+08:00" content="2016-06-08">
+              2016-06-08
+            </time>
+          </span>
+
+          
+
+          
+            
+              <span class="post-comments-count">
+                &nbsp; | &nbsp;
+                <a href="/2016/06/08/关于Mac系统下语言问题/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2016/06/08/关于Mac系统下语言问题/" itemprop="commentsCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+
+          
+          
+          
+
+          
+        </div>
+      </header>
+    
+
+
+    <div class="post-body" itemprop="articleBody">
+
       
-    
+      
+
+      
+        <p>新装过的mac系统由于terminal的语言编码格式为Ascii，很多时候使用ssh或者mosh server的时候不能登录成功。</p>
+<p>这里需要用locale命令查看终端下语言的形式，然后export相关的编码格式到LANG等变量。</p>
+<p>I noticed the exact same issue when logging onto servers running Red Hat from an OSX Lion machine.</p>
+<p>Try adding or editing the ~/.profile file for it to correctly export your locale settings upon initiating a new session.</p>
+<p>export LC_ALL=en_US.UTF-8<br>export LANG=en_US.UTF-8<br>These two lines added to the file should suffice to set the locale [replace en_US for your desired locale, and check beforehand that it is indeed installed on your system (locale -a)].</p>
+<p>After that, you can start a new session and check using locale:</p>
+<p>$ locale<br>The following should be the output:</p>
+<p>LANG=”en_US.UTF-8”<br>LC_COLLATE=”en_US.UTF-8”<br>LC_CTYPE=”en_US.UTF-8”<br>LC_MESSAGES=”en_US.UTF-8”<br>LC_MONETARY=”en_US.UTF-8”<br>LC_NUMERIC=”en_US.UTF-8”<br>LC_TIME=”en_US.UTF-8”<br>LC_ALL=”en_US.UTF-8”<br>If this does not work, here is a piece [link] discussing how to replace the outdated bash version in OSX with a newer one from MacPorts and set that as your default one.</p>
+
+      
+    </div>
+
+    <div>
+      
+        
+      
+    </div>
+
+    <div>
+      
+        
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2016/06/07/我的第一篇测试博客/" rel="next" title="我的第一篇测试博客">
+                <i class="fa fa-chevron-left"></i> 我的第一篇测试博客
+              </a>
+            
+          </div>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
   </div>
 
 
@@ -284,8 +402,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel  sidebar-panel-active ">
+      <section class="site-overview sidebar-panel ">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.gif"
@@ -335,6 +462,17 @@
 
       </section>
 
+      
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+            
+              
+            
+            
+              <p class="post-toc-empty">此文章未包含目录</p>
+            
+          </div>
+        </section>
       
 
     </div>
@@ -431,6 +569,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.0.1"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.0.1"></script>
+
+
 
   
 
@@ -447,9 +589,9 @@
 
     <script type="text/javascript">
       var disqus_shortname = 'haiboshi';
-      var disqus_identifier = 'tags/index.html';
-      var disqus_title = "tags";
-      var disqus_url = 'http://yoursite.com/tags/index.html';
+      var disqus_identifier = '2016/06/08/关于Mac系统下语言问题/';
+      var disqus_title = "关于Mac系统下语言问题";
+      var disqus_url = 'http://yoursite.com/2016/06/08/关于Mac系统下语言问题/';
 
       function run_disqus_script(disqus_script){
         var dsq = document.createElement('script');
